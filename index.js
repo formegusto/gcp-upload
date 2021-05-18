@@ -8,10 +8,10 @@ exports.resizeAndUpload = (data, context) => {
   // sharp 에서는 jpg 대신 jpeg를 사용합니다.
   console.log("name", name, "ext", ext);
 
-  const file = storage.bucket(bucket).file(name);
+  const file = storage.Bucket(bucket).file(name);
   const readStream = file.createReadStream();
 
-  const newFile = storage.bucket(bucket).file(`thumb/${name}`);
+  const newFile = storage.Bucket(bucket).file(`thumb/${name}`);
   const writeStream = newFile.createWriteStream();
 
   sharp(readStream)
