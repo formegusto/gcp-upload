@@ -3,8 +3,7 @@ const sharp = require("sharp");
 
 exports.resizeAndUpload = (data, context) => {
   const { bucket, name } = data;
-  const { Key } = bucket;
-  const ext = name.split(".")[Key.split(".").length - 1];
+  const ext = name.split(".")[name.split(".").length - 1];
   const requiredFormat = ext === "jpg" ? "jpeg" : ext;
   // sharp 에서는 jpg 대신 jpeg를 사용합니다.
   console.log("name", name, "ext", ext);
