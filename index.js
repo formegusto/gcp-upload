@@ -1,8 +1,9 @@
-const cloud = require("@google-cloud/storage");
-const storage = cloud();
-const sharp = require("sharp");
+import cloud from "@google-cloud/storage";
+import sharp from "sharp";
 
-exports.resizeAndUpload = (data, context) => {
+const storage = cloud();
+
+export function resizeAndUpload(data, context) {
   const { bucket, name } = data;
   const ext = name.split(".")[name.split(".").length - 1];
   const requiredFormat = ext === "jpg" ? "jpeg" : ext;
@@ -25,4 +26,4 @@ exports.resizeAndUpload = (data, context) => {
     });
     writeStream.on("error", reject);
   });
-};
+}
