@@ -1,4 +1,5 @@
-const storage = require("@google-cloud/storage")();
+const cloud = require("@google-cloud/storage");
+const storage = cloud();
 const sharp = require("sharp");
 
 exports.resizeAndUpload = (data, context) => {
