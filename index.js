@@ -2,7 +2,8 @@ var storage;
 var sharp;
 
 try {
-  storage = require("@google-cloud/storage")();
+  storage = require("@google-cloud/storage");
+  console.dir(storage);
   sharp = require("sharp");
 } catch (err) {
   console.log(err);
