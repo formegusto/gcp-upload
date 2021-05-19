@@ -6,7 +6,7 @@
   "author": "formegusto",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/storage": "^5.8.5",
-    "sharp": "^0.28.2"
+    "@google-cloud/storage": "^5.1.1",
+    "sharp": "^0.25.2"
   }
 }
